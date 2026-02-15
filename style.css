@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #ffb3d9, #ff66b2, #ff3385, #ff80bf);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(6px);
+}
+
+@keyframes gradientBG {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+
+.section {
+  display: none;
+  height: 100vh;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.section.active {
+  display: flex;
+  animation: fade 1s ease;
+}
+
+@keyframes fade {
+  from {opacity:0; transform:translateY(20px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  background: white;
+  color: #ff3385;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px white;
+}
+
+.hidden { display: none; }
+
+.glow {
+  text-shadow: 0 0 20px white, 0 0 40px pink;
+  animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+  0% {opacity:0.8;}
+  50% {opacity:1;}
+  100% {opacity:0.8;}
+}
+
+.polaroid {
+  background: white;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  max-width: 300px;
+  color: black;
+  transform: rotate(-3deg);
+}
+
+.polaroid img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.envelope {
+  font-size: 80px;
+  cursor: pointer;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  50% { transform: translateY(-10px); }
+}
+
+.letter {
+  background: white;
+  color: #ff3385;
+  padding: 25px;
+  border-radius: 20px;
+  max-width: 650px;
+  text-align: left;
+  white-space: pre-line;
+  max-height: 70vh;
+  overflow-y: auto;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.ending {
+  font-size: 50px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.15); }
+}
+
+/* Hearts */
+.hearts span {
+  position: absolute;
+  bottom: -20px;
+  font-size: 22px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+/* Confetti */
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  animation: fall 4s linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
